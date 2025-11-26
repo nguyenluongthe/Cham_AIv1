@@ -1,0 +1,340 @@
+/* === STYLES CHO HERO SECTION === */
+.hero {
+  min-height: calc(100vh - 70px); /* Bỏ 60px footer đi để nó cao hơn */
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+.heroContent {
+  padding-left: 10%;
+  max-width: 600px;
+  color: #495057;
+  animation: fadeInFromLeft 0.8s ease-out forwards;
+}
+.heroContent h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.3;
+  color: #ff6d2d;
+  margin-bottom: 1.5rem;
+}
+.heroContent p {
+  font-size: 1.25rem;
+  color: #ff6d2d;
+  margin-bottom: 2rem;
+}
+.ctaButton {
+  background-color: #333a45;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.ctaButton:hover {
+  background-color: #1a1e24;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* === STYLES CHO PHẦN TÍNH NĂNG MỚI === */
+.featuresSection {
+  background-color: #ffffff;
+  padding: 4rem 2rem; /* Tăng padding */
+}
+.featuresContainer {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  gap: 3rem; /* Tăng khoảng cách giữa 2 cột */
+}
+.featuresColumn,
+.howItWorksColumn {
+  flex: 1; /* Mỗi cột chiếm 50% */
+}
+.sectionTitle {
+  font-size: 1.5rem; /* 24px */
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #333a45;
+  display: inline-block; /* Để border-bottom vừa vặn với chữ */
+}
+.featureItem {
+  display: flex;
+  align-items: flex-start; /* Căn icon và text ở trên cùng */
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.featureIcon {
+  font-size: 2.2rem; /* Tăng kích thước icon */
+  color: #333a45;
+  margin-top: 5px; /* Căn chỉnh icon */
+}
+.featureItem h3 {
+  font-size: 1.2rem; /* 18px */
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.3rem;
+}
+.featureItem p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* === KEYFRAME ANIMATION === */
+@keyframes fadeInFromLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 4rem 0;
+  }
+  .featuresContainer {
+    flex-direction: column;
+  }
+}
+
+/* ... Các code cũ giữ nguyên ... */
+
+/* === SECTION 3: VĂN HÓA === */
+.cultureSection {
+  padding: 4rem 2rem;
+  background-color: #fff; /* Nền trắng */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cultureHeader {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.cultureHeader h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+/* Đường gạch chân dưới tiêu đề VĂN HÓA */
+.titleUnderline {
+  width: 60px;
+  height: 3px;
+  background-color: #888; /* Màu xám của gạch chân */
+  margin: 0 auto;
+}
+
+/* Grid 3 cột */
+.cultureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cột đều nhau */
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px; /* Giới hạn chiều rộng tổng thể */
+  margin-bottom: 3rem;
+}
+
+/* Responsive: Trên mobile thì chuyển về 1 cột */
+@media (max-width: 768px) {
+  .cultureGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Thẻ Card */
+.cultureCard {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Đổ bóng nhẹ */
+  transition: transform 0.3s ease;
+}
+
+.cultureCard:hover {
+  transform: translateY(-5px); /* Hiệu ứng hover bay lên nhẹ */
+}
+
+/* Phần ảnh trong Card */
+.cardImageContainer {
+  width: 100%;
+  height: 200px; /* Chiều cao cố định cho ảnh */
+  overflow: hidden;
+}
+
+.cardImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cắt ảnh vừa khung, không bị méo */
+}
+
+/* Phần nội dung text (nền xám) */
+.cardContent {
+  background-color: #E5E5E5; /* Màu nền xám nhạt giống ảnh mẫu */
+  padding: 1.5rem;
+  text-align: left;
+  min-height: 150px;
+}
+
+.cardContent h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #000;
+}
+
+.cardContent p {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+  font-style: italic; /* Chữ nghiêng giống ảnh mẫu */
+}
+
+/* Nút Xem thêm */
+.buttonContainer {
+  margin-top: 1rem;
+}
+
+.seeMoreBtn {
+  background-color: #8B0000; /* Màu đỏ đậm (Dark Red) */
+  color: white;
+  padding: 12px 40px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.seeMoreBtn:hover {
+  background-color: #a00000;
+}
+/* ... Các code cũ giữ nguyên ... */
+
+/* === SECTION 4: TÀI NGUYÊN === */
+.resourcesSection {
+  padding: 4rem 2rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.resourcesContainer {
+  display: flex;
+  flex-direction: row; /* Xếp ngang */
+  gap: 4rem; /* Khoảng cách giữa 2 cột lớn */
+  max-width: 1200px;
+  width: 100%;
+  align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+/* Cột Trái (Text) */
+.resourcesContent {
+  flex: 1; /* Chiếm 1 phần không gian */
+  text-align: left;
+}
+
+.resourcesHeader h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+/* Gạch chân căn trái (khác gạch chân căn giữa ở trên) */
+.titleUnderlineLeft {
+  width: 80px;
+  height: 3px;
+  background-color: #888;
+  margin-bottom: 2rem;
+}
+
+.resourceText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: justify; /* Căn đều 2 bên văn bản */
+}
+
+/* Cột Phải (Cards) */
+.resourcesCards {
+  flex: 1; /* Chiếm 1 phần không gian */
+  display: flex;
+  gap: 1.5rem; /* Khoảng cách giữa 2 card */
+}
+
+.resourceCard {
+  flex: 1;
+  height: 320px; /* Chiều cao cố định cho card lớn */
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.resourceCard:hover {
+  transform: translateY(-5px);
+}
+
+/* Màu sắc riêng cho từng card */
+.cardRed {
+  background-color: #8B3A3A; /* Màu đỏ đất giống ảnh */
+}
+
+.cardOlive {
+  background-color: #8B814C; /* Màu vàng rêu/oliu giống ảnh */
+}
+
+/* Icon trong card */
+.resourceIcon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  /* Nếu muốn icon có viền bao quanh giống thiết kế outline */
+  /* có thể thêm border nếu cần, nhưng icon FaGraduationCap thường là solid */
+}
+
+.resourceCard h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* Responsive: Trên mobile thì xếp dọc */
+@media (max-width: 900px) {
+  .resourcesContainer {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .resourcesCards {
+    width: 100%;
+    flex-direction: row; /* Vẫn giữ 2 card ngang trên tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .resourcesCards {
+    flex-direction: column; /* Trên điện thoại thì xếp dọc hết */
+  }
+  
+  .resourceCard {
+    height: 200px;
+  }
+}

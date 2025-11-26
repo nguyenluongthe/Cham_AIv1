@@ -1,0 +1,87 @@
+/* src/components/layout/Footer/Footer.css */
+
+/* === KHUNG BAO NGOÀI === */
+.footer {
+  background-color: #8B0000; /* Màu đỏ chủ đạo của dự án */
+  color: #ffffff;
+  padding-top: 3rem;
+  font-size: 0.95rem;
+}
+
+/* === CONTAINER CHỨA 3 CỘT === */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Tự động xuống dòng nếu màn hình nhỏ */
+  gap: 2rem;
+}
+
+/* === TỪNG CỘT === */
+.footer-column {
+  flex: 1; /* Chia đều không gian cho 3 cột */
+  min-width: 250px; /* Đảm bảo cột không bị quá bé */
+}
+
+/* Tiêu đề cột (VỀ CHÚNG TÔI, TÀI NGUYÊN...) */
+.footer-column h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #d4af37; /* Gạch chân màu vàng kim (Gold) tạo nét cổ điển */
+  display: inline-block; /* Để gạch chân chỉ dài bằng chữ */
+}
+
+/* Danh sách link */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column li {
+  margin-bottom: 0.8rem;
+}
+
+/* Link */
+.footer-column a {
+  color: #e0e0e0; /* Màu trắng ngà */
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-column a:hover {
+  color: #fff;
+  transform: translateX(5px); /* Hiệu ứng dịch chuyển nhẹ sang phải khi hover */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* === PHẦN COPYRIGHT CUỐI CÙNG === */
+.footer-copyright {
+  background-color: #600000; /* Màu đỏ tối hơn để phân cách */
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #ccc;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* === RESPONSIVE (MOBILE) === */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column; /* Xếp chồng các cột lên nhau */
+    text-align: center; /* Căn giữa nội dung */
+  }
+
+  .footer-column h3 {
+    border-bottom: none; /* Bỏ gạch chân hoặc căn giữa gạch chân nếu muốn */
+    text-decoration: underline; 
+    text-decoration-color: #d4af37;
+    text-underline-offset: 5px;
+  }
+}

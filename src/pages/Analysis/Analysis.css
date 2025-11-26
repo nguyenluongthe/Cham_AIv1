@@ -1,0 +1,274 @@
+/* src/pages/Analysis/Analysis.css */
+
+/* --- 1. CONTAINER CHUNG --- */
+.analysis-container {
+  max-width: 1200px; /* Tăng chiều rộng để hiển thị 2 cột thoải mái */
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- 2. GIAO DIỆN UPLOAD (Giữ nguyên vì đã đẹp) --- */
+.analysis-upload-wrapper {
+  animation: fadeIn 0.5s ease;
+}
+
+.analysis-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.analysis-header h1 {
+  color: #8B0000;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.analysis-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.analysis-upload-area {
+  position: relative;
+  background-color: #fafafa;
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.analysis-upload-area:hover {
+  border-color: #8B0000;
+  background-color: #fff5f5;
+}
+
+.analysis-file-input {
+  display: none;
+}
+
+.analysis-upload-label {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 40px;
+}
+
+.analysis-upload-icon {
+  font-size: 5rem;
+  color: #8B0000;
+  margin-bottom: 20px;
+}
+
+.analysis-upload-label h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.analysis-note {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.analysis-file-name {
+  color: #047481;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Hiệu ứng Loading */
+.analysis-loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #8B0000;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 3. GIAO DIỆN KẾT QUẢ (MỚI - DẠNG THẺ GRID) --- */
+.analysis-result-wrapper {
+  width: 100%;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Header của phần kết quả */
+.analysis-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 15px;
+}
+
+.analysis-result-header h2 {
+  color: #8B0000;
+  margin: 0;
+}
+
+/* Nút Quay lại */
+.analysis-back-btn {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.analysis-back-btn:hover {
+  background-color: #8B0000;
+  color: white;
+  border-color: #8B0000;
+}
+
+/* Badge độ chính xác */
+.analysis-badge {
+  background-color: #e6fffa;
+  color: #047481;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: 1px solid #b2f5ea;
+}
+
+/* Phần tiêu đề bài viết phân tích */
+.analysis-title-box {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.analysis-title-box h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.analysis-source {
+  color: #777;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+/* --- GRID LAYOUT (2 CỘT) --- */
+.analysis-cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Chia đôi màn hình 50-50 */
+  gap: 30px;
+}
+
+/* Style cho từng thẻ Card */
+.analysis-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Đổ bóng nhẹ đẹp mắt */
+  overflow: hidden;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header của Card */
+.analysis-card-head {
+  padding: 15px 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Màu nền riêng cho từng loại header */
+.head-original {
+  background-color: #d4af37; /* Màu vàng kim (Gold) cho nét cổ điển */
+}
+
+.head-trans {
+  background-color: #8B0000; /* Màu đỏ chủ đạo cho bản dịch */
+}
+
+/* Nội dung bên trong Card */
+.analysis-card-body {
+  padding: 25px;
+  line-height: 1.8;
+  color: #333;
+  text-align: justify; /* Căn đều 2 bên */
+  font-size: 1rem;
+}
+
+/* Font chữ đặc biệt cho phần phiên âm */
+.font-cham {
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #fffbf0; /* Nền hơi vàng nhạt giống giấy cũ */
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+/* --- RESPONSIVE (MOBILE) --- */
+@media (max-width: 768px) {
+  /* Trên điện thoại thì xếp chồng lên nhau */
+  .analysis-cards-container {
+    grid-template-columns: 1fr; 
+  }
+
+  .analysis-result-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+  
+  .analysis-back-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+/* src/pages/Analysis/Analysis.css */
+
+/* Tìm class .inscription-img và THAY THẾ bằng đoạn này */
+.inscription-img {
+  max-width: 100%;       /* Không cho phép tràn ra ngoài khung */
+  height: 250px;         /* CỐ ĐỊNH chiều cao chỉ 250px (vừa mắt) */
+  width: auto;           /* Chiều rộng tự co giãn theo tỷ lệ ảnh */
+  object-fit: contain;   /* Đảm bảo ảnh không bị méo/dẹt */
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background-color: #333; /* Nền tối để tôn ảnh lên */
+  display: block;
+  margin: 0 auto;        /* Căn giữa ảnh */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
