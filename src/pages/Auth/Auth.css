@@ -1,0 +1,101 @@
+/* src/pages/Auth/Auth.css */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; /* Căn giữa màn hình */
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.auth-card {
+  background: white;
+  width: 100%;
+  max-width: 450px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  text-align: center;
+  border-top: 5px solid #8B0000; /* Viền đỏ chủ đạo trên cùng */
+}
+
+.auth-title {
+  color: #8B0000;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.auth-subtitle {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  position: relative;
+  text-align: left;
+}
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px 15px 12px 45px; /* Padding trái lớn để chừa chỗ cho Icon */
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  outline: none;
+}
+
+.auth-input:focus {
+  border-color: #8B0000;
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.1);
+}
+
+.auth-btn {
+  background-color: #8B0000;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 10px;
+}
+
+.auth-btn:hover {
+  background-color: #a00000;
+}
+
+.auth-footer {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.auth-link {
+  color: #8B0000;
+  font-weight: bold;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
